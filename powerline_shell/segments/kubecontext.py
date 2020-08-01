@@ -8,8 +8,9 @@ import os
 
 class Segment(BasicSegment):
     def add_to_powerline(self):
-        kubecontext = os.environ.get("KUBECONFIG")
+        kube_context = os.environ.get("KUBECONFIG")
         if kubecontext:
-            self.powerline.append(" kctx:%s " % os.path.basename(kubecontext),
-                                  self.powerline.theme.KUBECONFIG_FG,
-                                  self.powerline.theme.KUBECONFIG_BG)
+            self.powerline.append(" kctx:%s " % os.path.basename(kube_context),
+                                  self.powerline.theme.KUBE_CONTEXT_FG,
+                                  self.powerline.theme.KUBE_CONTEXT_BG)
+
